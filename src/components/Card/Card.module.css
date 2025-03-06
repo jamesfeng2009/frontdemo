@@ -77,14 +77,31 @@
 .merchantName {
   font-weight: bold;
   font-size: 14px;
+  /* 添加多语言支持 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 最多显示两行 */
+  -webkit-box-orient: vertical;
+  min-height: 2.8em; /* 确保高度一致 */
 }
 
 .merchantLocation {
   font-size: 12px;
   color: #666;
+  /* 添加多语言支持 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .cashback {
   color: #28a745;
   font-weight: bold;
+  /* 添加多语言支持 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px; /* 限制最大宽度 */
 }
