@@ -1,0 +1,27 @@
+.carouselContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.swiper {
+  padding: 30px 10px;
+}
+
+.swiperSlide {
+  transition: transform 0.3s ease;
+}
+
+/* 自定义分页器样式 */
+:global .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  opacity: 0.5;
+}
+
+:global .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #333;
+}
