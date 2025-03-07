@@ -73,6 +73,16 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <Header />
+      
+      {/* 添加标题和描述文本 */}
+      <div className="hero-section">
+        <h1 className="main-title">MAKE YOUR SPEND, WELL-SPENT</h1>
+        <p className="subtitle">
+          Updating your wardrobe? Get cashback. When in Japan? Spend in Yen. Big life goals? Reach them faster. However you spend — Revolut is all you need.
+        </p>
+        <button className="get-started-btn">Get started</button>
+      </div>
+      
       <div className="carousel-section">
         <CardCarousel cards={cardData} />
       </div>
