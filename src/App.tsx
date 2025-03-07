@@ -58,6 +58,15 @@ const App: React.FC = () => {
       merchant: 'Paris Shopping',
       location: 'France',
       cashback: '€75'
+    },
+    {
+      id: 5,
+      image: 'https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // 伦敦图片
+      amount: '£1,850',
+      currency: 'GBP',
+      merchant: 'London Experience',
+      location: 'UK',
+      cashback: '£95'
     }
   ];
 
