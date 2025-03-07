@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.css'; // 确保导入全局样式
 import App from './App';
 import './i18n'; // 导入国际化配置
 
