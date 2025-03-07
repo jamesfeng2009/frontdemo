@@ -60,7 +60,9 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
         slidesPerView={slidesPerView}
         pagination={{ 
           clickable: true,
-          type: 'bullets',
+          el: '.custom-pagination', // 使用自定义分页器容器
+          bulletClass: `${styles.paginationBullet}`,
+          bulletActiveClass: `${styles.paginationBulletActive}`
         }}
         loop={true}
         autoplay={{
@@ -85,10 +87,8 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
         ))}
       </Swiper>
       
-      {/* 如果上面的分页器不显示，可以添加这个自定义分页器 */}
-      <div className={styles.paginationContainer}>
-        <div className="swiper-pagination"></div>
-      </div>
+      {/* 自定义分页器容器 - 确保它在轮播图之外 */}
+      <div className="custom-pagination"></div>
     </div>
   );
 };
