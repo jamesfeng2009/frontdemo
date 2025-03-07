@@ -46,6 +46,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
         modules={[Pagination, Autoplay]}
         spaceBetween={isMobile ? 10 : 20}
         slidesPerView={slidesPerView}
+        centeredSlides={true} // 确保卡片居中显示
         pagination={{ 
           clickable: true,
           dynamicBullets: false,
@@ -55,7 +56,6 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        effect="slide"
         className={styles.swiper}
         onSwiper={(swiper: SwiperType) => {
           swiperRef.current = swiper;

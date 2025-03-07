@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 400px;
 }
 
 .swiper {
@@ -17,13 +18,22 @@
 }
 
 .swiperSlide {
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   width: 300px;
   max-width: 100%;
   display: flex;
   justify-content: center;
   height: auto !important;
 }
+
+/* 活动卡片样式 - 中间的卡片 */
+:global .swiper-slide-active {
+  opacity: 1 !important;
+  transform: scale(1.1) !important; /* 中间卡片放大 */
+  z-index: 2;
+}
+
+
 
 /* 分页器样式 */
 :global .swiper-pagination {
@@ -80,11 +90,12 @@
   }
 }
 
+/* 移除这个重复的样式定义，它覆盖了上面的设置 */
 /* 活动卡片样式 */
-:global .swiper-slide-active {
-  transform: scale(1.05); /* 活动卡片稍微放大 */
+/* :global .swiper-slide-active {
+  transform: scale(1.05);
   z-index: 2;
-}
+} */
 
 /* 自定义分页器样式 */
 :global .custom-pagination {
