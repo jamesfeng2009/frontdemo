@@ -169,3 +169,35 @@
   font-weight: 600;
   font-size: 16px;
 }
+
+/* 分页器指示点容器 */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* 分页器指示点样式 */
+.paginationDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 激活状态的指示点 */
+.paginationDot.active {
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+}
+
+/* 鼠标悬停效果 */
+.paginationDot:hover {
+  background-color: #999;
+}

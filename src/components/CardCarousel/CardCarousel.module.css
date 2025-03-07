@@ -3,17 +3,13 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
+  position: relative;
 }
 
 .swiper {
   padding: 30px 10px;
-  overflow: visible;
+  padding-bottom: 50px; /* 为分页器留出空间 */
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .swiperSlide {
@@ -30,26 +26,37 @@
   z-index: 2;
 }
 
-/* 自定义分页器样式 */
+/* 分页器样式 - 修改为更明显的样式 */
 :global .swiper-pagination {
-  position: relative;
-  bottom: 0;
-  margin-top: 20px;
-  width: 100%;
-  text-align: center;
+  position: relative !important; /* 改为相对定位 */
+  bottom: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 20px !important; /* 增加顶部间距 */
 }
 
 :global .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background-color: #ccc;
-  opacity: 0.5;
-  margin: 0 5px;
+  width: 8px !important;
+  height: 8px !important;
+  display: inline-block !important;
+  border-radius: 50% !important;
+  background: #ccc !important;
+  margin: 0 5px !important;
+  opacity: 0.5 !important;
 }
 
 :global .swiper-pagination-bullet-active {
-  opacity: 1;
-  background-color: #333;
-  width: 12px; /* 活动状态的点稍大 */
-  height: 12px;
+  background: #333 !important;
+  opacity: 1 !important;
+}
+
+/* 添加自定义分页器容器 */
+.paginationContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
