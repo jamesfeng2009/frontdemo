@@ -152,13 +152,44 @@
   flex-direction: column;
 }
 
+/* 添加以下样式到Card.module.css文件 */
+
 .merchantName {
-  font-weight: 600;
   font-size: 16px;
+  font-weight: 600;
   color: #333;
-  margin-bottom: 2px;
+  /* 文本溢出处理 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px; /* 限制最大宽度 */
 }
 
+.locationText, .currencyText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.currencyTag {
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .merchantName {
+    max-width: 140px;
+  }
+  
+  .currencyTag {
+    max-width: 85%;
+  }
+}
 .merchantTime {
   font-size: 14px;
   color: #888;
