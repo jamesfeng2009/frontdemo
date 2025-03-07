@@ -44,7 +44,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
     <div className={`${styles.carouselContainer} ${isMobile ? styles.mobileContainer : ''}`}>
       <Swiper
         modules={[Pagination, Autoplay]}
-        spaceBetween={isMobile ? 10 : 20}
+        spaceBetween={isMobile ? 12 : 30} // 间距增加2px：从10增加到12，从20增加到22
         slidesPerView={slidesPerView}
         centeredSlides={true} // 确保卡片居中显示
         pagination={{ 
