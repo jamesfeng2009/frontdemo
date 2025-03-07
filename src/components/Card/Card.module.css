@@ -165,7 +165,7 @@
 /* 添加以下样式到Card.module.css文件 */
 
 .merchantName {
-  font-size: 16px;
+  font-size: 15px; /* 缩小字体大小 */
   font-weight: 600;
   color: #333;
   /* 文本溢出处理 */
@@ -235,16 +235,16 @@
   }
   
   .merchantName {
-    font-size: 14px;
-    max-width: 120px;
+    font-size: 13px; /* 移动端进一步缩小 */
+    max-width: 110px; /* 调整最大宽度 */
   }
   
   .merchantTime {
-    font-size: 12px;
+    font-size: 11px;
   }
   
   .cashback {
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .merchantIcon {
@@ -284,7 +284,7 @@
 .cashback {
   color: #e74c3c; /* 红色，表示支出 */
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px; /* 缩小价格字体 */
 }
 
 /* 分页器指示点容器 */
