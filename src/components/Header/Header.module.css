@@ -3,6 +3,8 @@
   padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  width: 100%;
 }
 
 /* Web端样式 (>1024px) */
@@ -122,11 +124,11 @@
   white-space: nowrap;
 }
 
-
 .langSwitch {
   position: absolute;
   top: 20px;
   right: 20px;
+  z-index: 10;
 }
 
 .langButton {

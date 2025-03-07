@@ -64,7 +64,9 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <Header />
-      <CardCarousel cards={cardData} />
+      <div className="carousel-section">
+        <CardCarousel cards={cardData} />
+      </div>
     </div>
   );
 };

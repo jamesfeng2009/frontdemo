@@ -4,17 +4,30 @@
   margin: 0 auto;
   padding: 20px 0;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .swiper {
   padding: 30px 10px;
   overflow: visible;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .swiperSlide {
   transition: transform 0.3s ease;
   width: 320px; /* 固定卡片宽度 */
   max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 活动卡片样式 */
+:global .swiper-slide-active {
+  transform: scale(1.05); /* 活动卡片稍微放大 */
+  z-index: 2;
 }
 
 /* 自定义分页器样式 */
@@ -22,6 +35,8 @@
   position: relative;
   bottom: 0;
   margin-top: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 :global .swiper-pagination-bullet {

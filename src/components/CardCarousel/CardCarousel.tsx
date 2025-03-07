@@ -20,11 +20,11 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setSlidesPerView(1);
+        setSlidesPerView(1.2); // 在小屏幕上显示部分下一张卡片
       } else if (window.innerWidth <= 1024) {
-        setSlidesPerView(2);
+        setSlidesPerView(2.2); // 在中等屏幕上显示部分下一张卡片
       } else {
-        setSlidesPerView(3);
+        setSlidesPerView(3); // 在大屏幕上显示完整的三张卡片
       }
     };
 
@@ -56,19 +56,23 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
     <div className={styles.carouselContainer}>
       <Swiper
         modules={[Pagination, Autoplay, EffectCoverflow]}
-        spaceBetween={20}
+        spaceBetween={20} // 增加间距
         slidesPerView={slidesPerView}
-        pagination={{ clickable: true }}
+        centeredSlides={true} // 启用居中显示
+        pagination={{ 
+          clickable: true,
+          dynamicBullets: true // 动态分页器
+        }}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 4000, // 增加自动播放时间
           disableOnInteraction: false,
         }}
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
-          depth: 100,
+          depth: 50, // 减小深度效果
           modifier: 1,
           slideShadows: false,
         }}
