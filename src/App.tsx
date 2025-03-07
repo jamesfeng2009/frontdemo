@@ -21,42 +21,42 @@ const App: React.FC = () => {
     }
   }, [i18n]);
   
-  // 使用翻译后的文本
+  // 使用翻译后的文本，更新为与图片完全一致的数据
   const cardData: CardData[] = [
     {
       id: 1,
-      image: '/images/card1.jpg',
+      image: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // 日本街道图片
       amount: '¥20,126',
       currency: 'JPY',
-      merchant: translate('drinksAt'),
-      location: translate('japan'),
-      cashback: '¥1,022'
+      merchant: 'Drinks at Yokocho',
+      location: 'Japan',
+      cashback: '¥1,550'
     },
     {
       id: 2,
-      image: '/images/card2.jpg',
-      amount: 'S$6,252',
+      image: 'https://images.unsplash.com/photo-1535139262971-c51845709a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // 新加坡图片
+      amount: '$6,252',
       currency: 'SGD',
-      merchant: translate('topFirst'),
-      location: translate('lastMonth'),
-      cashback: '+S$2,500'
+      merchant: 'TopFirst cashback',
+      location: 'Last month',
+      cashback: '$2,500'
     },
     {
       id: 3,
-      image: '/images/card3.jpg',
+      image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // 纽约图片
       amount: '$2,500',
       currency: 'USD',
-      merchant: translate('newYorkPass'),
-      location: translate('usa'),
+      merchant: 'New York Pass',
+      location: 'USA',
       cashback: '$25'
     },
     {
       id: 4,
-      image: '/images/card1.jpg',
+      image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // 巴黎图片
       amount: '€1,500',
       currency: 'EUR',
-      merchant: translate('parisShopping'),
-      location: translate('france'),
+      merchant: 'Paris Shopping',
+      location: 'France',
       cashback: '€75'
     }
   ];

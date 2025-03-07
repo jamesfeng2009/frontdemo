@@ -1,10 +1,11 @@
 .card {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .card:hover {
@@ -12,11 +13,20 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* 新增：没有图片的卡片样式 */
+.noImageCard {
+  height: auto;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .cardImageContainer {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 133%; /* 3:4 aspect ratio */
+  padding-bottom: 140%; /* 调整为更接近图片的比例 */
   overflow: hidden;
 }
 
@@ -27,21 +37,85 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.8); /* 调整亮度，使文字更清晰 */
 }
 
-.amountOverlay {
+/* 图片占位符样式 */
+.imagePlaceholder {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 8px 12px;
-  border-radius: 8px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.imagePlaceholder span {
+  font-size: 72px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+/* 金额容器样式 */
+.amountContainer {
+  position: absolute;
+  top: 45%; /* 调整位置更接近图片 */
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .amount {
   color: white;
-  font-size: 24px;
+  font-size: 42px; /* 调整大小更接近图片 */
   font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 货币标签样式 */
+.currencyTag {
+  background-color: white;
+  border-radius: 30px; /* 更圆润的边角 */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  min-width: 140px; /* 确保宽度足够 */
+  justify-content: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #e74c3c; /* 红色圆点 */
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.locationText, .currencyText {
+  font-weight: 500;
+}
+
+.separator {
+  margin: 0 5px;
+  color: #666;
+}
+
+.dropdownIcon {
+  font-size: 10px;
+  margin-left: 8px;
+  color: #666;
 }
 
 .cardFooter {
@@ -49,6 +123,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  border-top: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .merchantInfo {
@@ -57,16 +135,16 @@
 }
 
 .merchantIcon {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background-color: #f0f0f0;
+  background-color: #f39c12; /* 橙色背景 */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 12px;
-  font-weight: bold;
-  color: #333;
+  color: white;
+  font-size: 20px;
 }
 
 .merchantDetails {
@@ -75,33 +153,19 @@
 }
 
 .merchantName {
-  font-weight: bold;
-  font-size: 14px;
-  /* 添加多语言支持 */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* 最多显示两行 */
-  -webkit-box-orient: vertical;
-  min-height: 2.8em; /* 确保高度一致 */
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 2px;
 }
 
-.merchantLocation {
-  font-size: 12px;
-  color: #666;
-  /* 添加多语言支持 */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 100%;
+.merchantTime {
+  font-size: 14px;
+  color: #888;
 }
 
 .cashback {
-  color: #28a745;
-  font-weight: bold;
-  /* 添加多语言支持 */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 80px; /* 限制最大宽度 */
+  color: #e74c3c; /* 红色，表示支出 */
+  font-weight: 600;
+  font-size: 16px;
 }
