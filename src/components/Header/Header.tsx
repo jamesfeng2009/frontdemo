@@ -6,27 +6,28 @@ import { useTranslation } from 'react-i18next';
 type TranslateFunction = (key: string, options?: any) => string;
 
 const Header: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   
-  // 使用类型断言
-  const translate = t as TranslateFunction;
+  // 移除语言切换按钮相关代码
+  // 如果有类似下面的代码，可以删除或注释掉
+  // const toggleLanguage = () => {
+  //   const newLang = i18n.language === 'en' ? 'zh' : 'en';
+  //   i18n.changeLanguage(newLang);
+  // };
   
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'zh' : 'en';
-    i18n.changeLanguage(newLang);
-  };
-
   return (
-    <div className={styles.header}>
-      <div className={styles.langSwitch}>
-        <button onClick={toggleLanguage} className={styles.langButton}>
-          {i18n.language === 'en' ? '中文' : 'English'}
-        </button>
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        {/* Logo 内容 */}
       </div>
-      <h1 className={styles.title}>{translate('title')}</h1>
-      <p className={styles.subtitle}>{translate('subtitle')}</p>
-      <button className={styles.button}>{translate('getStarted')}</button>
-    </div>
+      
+      {/* 移除语言切换按钮 */}
+      {/* <button onClick={toggleLanguage} className={styles.langButton}>
+        {i18n.language === 'en' ? '中文' : 'English'}
+      </button> */}
+      
+      {/* 其他 header 内容 */}
+    </header>
   );
 };
 
