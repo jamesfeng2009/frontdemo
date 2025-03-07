@@ -180,16 +180,92 @@
   align-items: center;
 }
 
-/* 移动端适配 */
-@media (max-width: 768px) {
-  .merchantName {
-    max-width: 140px;
+/* 平板端适配 (<=1024px) */
+@media (max-width: 1024px) {
+  .amount {
+    font-size: 36px;
   }
   
   .currencyTag {
-    max-width: 85%;
+    padding: 8px 16px;
+    font-size: 13px;
+    min-width: 130px;
+  }
+  
+  .merchantName {
+    font-size: 15px;
+    max-width: 160px;
+  }
+  
+  .merchantTime {
+    font-size: 13px;
+  }
+  
+  .cashback {
+    font-size: 15px;
+  }
+  
+  .merchantIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }
+
+/* 移动端适配 (<=768px) */
+@media (max-width: 768px) {
+  .amount {
+    font-size: 30px;
+  }
+  
+  .currencyTag {
+    padding: 6px 14px;
+    font-size: 12px;
+    min-width: 120px;
+  }
+  
+  .merchantName {
+    font-size: 14px;
+    max-width: 120px;
+  }
+  
+  .merchantTime {
+    font-size: 12px;
+  }
+  
+  .cashback {
+    font-size: 14px;
+  }
+  
+  .merchantIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    margin-right: 8px;
+  }
+  
+  .cardFooter {
+    padding: 12px;
+  }
+  
+  .imagePlaceholder span {
+    font-size: 56px;
+  }
+}
+
+/* 小屏幕手机适配 (<=480px) */
+@media (max-width: 480px) {
+  .amount {
+    font-size: 26px;
+  }
+  
+  .currencyTag {
+    padding: 5px 12px;
+    font-size: 11px;
+    min-width: 100px;
+  }
+}
+
 .merchantTime {
   font-size: 14px;
   color: #888;

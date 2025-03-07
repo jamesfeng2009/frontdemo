@@ -120,17 +120,38 @@
 }
 
 .main-title {
-  font-size: 64px; /* 增大标题字体 */
+  font-size: 64px;
   font-weight: 900;
-  margin-bottom: 24px; /* 增加底部间距 */
+  margin-bottom: 24px;
   color: #000;
   line-height: 1.1;
   letter-spacing: -0.5px;
+  /* 网页端默认单行显示 */
   white-space: nowrap;
   width: 100%;
   display: block;
   overflow: visible;
-  text-overflow: clip;
+}
+
+/* 平板端适配 (<=1024px) */
+@media (max-width: 1024px) {
+  .main-title {
+    font-size: 52px;
+    /* 允许在平板端换行显示 */
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}
+
+/* 移动端适配 (<=768px) */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 42px;
+    /* 确保移动端允许换行 */
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 0 10px;
+  }
 }
 
 .subtitle {
@@ -158,7 +179,12 @@
 /* 移动端适配 */
 @media (max-width: 768px) {
   .main-title {
-    font-size: 48px;
+    font-size: 42px; /* 减小移动端字体大小 */
+    padding: 0 10px;
+    white-space: normal; /* 确保移动端允许换行 */
+    word-wrap: break-word; /* 允许长单词换行 */
+    overflow-wrap: break-word;
+    hyphens: auto; /* 允许断字 */
   }
   
   .subtitle {
