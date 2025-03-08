@@ -34,6 +34,27 @@ body, html {
   position: relative;
 }
 
+/* 平板端适配 (768px-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .carousel-section {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+  
+  /* 平板特有的字体大小调整 */
+  html {
+    font-size: 15px;
+  }
+}
+
 /* 移动端适配 */
 @media (max-width: 768px) {
   .app {
