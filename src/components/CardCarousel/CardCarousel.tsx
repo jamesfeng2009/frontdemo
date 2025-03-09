@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -25,7 +25,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
-      
+
       if (mobile) {
         setSlidesPerView(1);
       } else if (window.innerWidth <= 1024) {
@@ -34,7 +34,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
         setSlidesPerView(3);
       }
     };
-    
+
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -47,7 +47,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
         spaceBetween={isMobile ? 12 : 30}
         slidesPerView={slidesPerView}
         centeredSlides={true}
-        pagination={{ 
+        pagination={{
           clickable: true,
           dynamicBullets: false,
           el: '.swiper-pagination', // 明确指定分页器元素
